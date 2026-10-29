@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hashmmohmed466-wq.github.io/zalingei-digital-library/sitemap.xml
