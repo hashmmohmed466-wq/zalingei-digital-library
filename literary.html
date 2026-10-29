@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الفرع الأدبي | مكتبة زليجي الرقمية</title>
+    <style>
+      :root {
+        --primary: #0d3b66;
+        --primary-deep: #072b47;
+        --secondary: #f5c76a;
+        --bg: #f5f8fc;
+        --card: #ffffff;
+        --line: #e7edf6;
+        --text: #1a2433;
+        --muted: #64748b;
+        --shadow: 0 16px 36px rgba(13, 59, 102, 0.08);
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Tahoma", "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+      a { text-decoration: none; }
+      .container { width: min(1100px, calc(100% - 26px)); margin: 0 auto; }
+      .topbar {
+        background: linear-gradient(135deg, var(--primary-deep), var(--primary)); color: #fff; position: sticky; top: 0; z-index: 10; box-shadow: 0 8px 24px rgba(9,31,58,.18);
+      }
+      .topbar-inner { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+      .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; }
+      .brand-mark { width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(135deg, #fbe9b4, var(--secondary)); display: grid; place-items: center; color: var(--primary-deep); font-weight: 900; }
+      .nav { display: flex; flex-wrap: wrap; gap: 14px; }
+      .nav a { color: rgba(255,255,255,0.9); padding: 8px 10px; border-radius: 10px; font-weight: 700; }
+      .nav a:hover { background: rgba(255,255,255,0.08); }
+      .page-header {
+        background: linear-gradient(135deg, #0e446b, #0c3555); color: #fff; padding: 46px 0 26px;
+      }
+      .page-header h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); }
+      .section { padding: 60px 0; }
+      .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+      .book-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+      .book-cover { background: linear-gradient(135deg, #dfeeff, #fceec5); padding: 24px 18px; font-size: 1.9rem; font-weight: 900; color: var(--primary); text-align: center; }
+      .book-content { padding: 18px; }
+      .book-content h3 { margin: 0 0 8px; font-size: 1.4rem; color: var(--primary); }
+      .book-content p { margin: 0 0 16px; color: var(--muted); }
+      .book-link { display: inline-block; background: var(--primary); color: #fff; padding: 10px 16px; border-radius: 10px; font-weight: 800; }
+      .book-link:hover { background: var(--primary-deep); }
+      footer { background: #071c2f; color: #fff; padding: 22px 0 26px; }
+      .footer-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+      .footer-row p { margin: 0; color: rgba(255,255,255,0.82); }
+      @media (max-width: 640px) { .topbar-inner, .footer-row { flex-direction: column; align-items: flex-start; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand"><div class="brand-mark">ز</div><span>مكتبة زليجي الرقمية</span></div>
+        <nav class="nav" aria-label="التنقل">
+          <a href="index.html">الرئيسية</a>
+          <a href="science.html">العلمي</a>
+          <a href="literary.html">الأدبي</a>
+          <a href="commercial.html">التجاري</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>الفرع الأدبي</h1>
+      </div>
+    </section>
+
+    <main class="section">
+      <div class="container books-grid">
+        <article class="book-card">
+          <div class="book-cover">عربي</div>
+          <div class="book-content">
+            <h3>اللغة العربية</h3>
+            <p>النحو، البلاغة، القراءة، والتعبير مع شرح واضح ومراجعة سهلة.</p>
+            <a class="book-link" href="#">فتح الكتاب</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover">تاريخ</div>
+          <div class="book-content">
+            <h3>التاريخ</h3>
+            <p>مراحل الحضارات، الحروب، والمواقف التاريخية من منظور منطقي.</p>
+            <a class="book-link" href="#">فتح الكتاب</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover">جغرافيا</div>
+          <div class="book-content">
+            <h3>الجغرافيا</h3>
+            <p>المسطحات، المناخ، الموارد، والمعطيات الطبيعية والإنسانية.</p>
+            <a class="book-link" href="#">فتح الكتاب</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover">فلسفة</div>
+          <div class="book-content">
+            <h3>الفلسفة</h3>
+            <p>مفاهيم التفكير، العقل، الوجود، والمعنى في الفلسفة الغربية والعربية.</p>
+            <a class="book-link" href="#">فتح الكتاب</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover">اقتصاد</div>
+          <div class="book-content">
+            <h3>الاقتصاد</h3>
+            <p>أساسيات الطلب والعرض، الإنتاج، والميزانية والإنفاق.</p>
+            <a class="book-link" href="#">فتح الكتاب</a>
+          </div>
+        </article>
+
+        <article class="book-card">
+          <div class="book-cover">إسلام</div>
+          <div class="book-content">
+            <h3>التربية الإسلامية</h3>
+            <p>العقيدة، الأخلاق، والسيرة والفقه مع مراجعة منهجية.</p>
+            <a class="book-link" href="#">فتح الكتاب</a>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <p>© <span id="year"></span> مكتبة زليجي الرقمية</p>
+        <p>جميع الحقوق محفوظة</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
+
+

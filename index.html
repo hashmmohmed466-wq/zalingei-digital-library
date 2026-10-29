@@ -3,33 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="مكتبة زليجي الرقمية - كتب الصف الثالث ثانوي حسب التخصص"
-    />
+    <meta name="description" content="مكتبة زليجي الرقمية - كتب الصف الثالث ثانوي حسب التخصص" />
     <title>مكتبة زليجي الرقمية</title>
     <style>
       :root {
         --primary: #0d3b66;
         --primary-deep: #072b47;
-        --primary-soft: #eaf3ff;
         --secondary: #f5c76a;
-        --text: #1c2430;
-        --muted: #637184;
-        --bg: #f4f7fb;
+        --bg: #f5f8fc;
         --card: #ffffff;
-        --line: #e7edf5;
-        --success: #1b9c7c;
-        --shadow: 0 14px 35px rgba(13, 59, 102, 0.12);
-        --radius: 20px;
+        --line: #e7edf6;
+        --text: #1a2433;
+        --muted: #64748b;
+        --shadow: 0 16px 36px rgba(13, 59, 102, 0.08);
       }
 
       * { box-sizing: border-box; }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         font-family: "Tahoma", "Segoe UI", sans-serif;
@@ -37,495 +27,184 @@
         color: var(--text);
         line-height: 1.7;
       }
-
-      a {
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      .container {
-        width: min(1180px, calc(100% - 30px));
-        margin: 0 auto;
-      }
+      a { text-decoration: none; }
+      .container { width: min(1180px, calc(100% - 30px)); margin: 0 auto; }
 
       .topbar {
         background: linear-gradient(135deg, var(--primary-deep), var(--primary));
         color: #fff;
         position: sticky;
         top: 0;
-        z-index: 50;
+        z-index: 10;
         box-shadow: 0 8px 24px rgba(9, 31, 58, 0.18);
       }
-
       .topbar-inner {
+        min-height: 74px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 74px;
         gap: 18px;
       }
-
       .brand {
         display: flex;
         align-items: center;
         gap: 12px;
         font-weight: 800;
-        font-size: 1.1rem;
       }
-
       .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
+        width: 38px; height: 38px; border-radius: 12px;
         background: linear-gradient(135deg, #fbe9b4, var(--secondary));
-        display: grid;
-        place-items: center;
-        color: var(--primary);
+        color: var(--primary-deep);
+        display: grid; place-items: center;
         font-weight: 900;
-        font-size: 1.1rem;
       }
-
       .nav {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        flex-wrap: wrap;
+        display: flex; gap: 14px; flex-wrap: wrap;
       }
-
       .nav a {
         color: rgba(255,255,255,0.9);
-        font-weight: 600;
-        padding: 8px 10px;
-        border-radius: 10px;
-        transition: 0.2s ease;
+        padding: 8px 10px; border-radius: 10px; font-weight: 700;
       }
-
-      .nav a:hover {
-        background: rgba(255,255,255,0.08);
-      }
+      .nav a:hover { background: rgba(255,255,255,0.08); }
 
       .hero {
-        position: relative;
-        overflow: hidden;
-        background:
-          radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 32%),
-          linear-gradient(135deg, #0e446b 0%, #0c365b 45%, #081d32 100%);
+        background: linear-gradient(135deg, #0e446b, #0b3559 45%, #081d32 100%);
         color: #fff;
-        padding: 80px 0 60px;
+        padding: 72px 0 56px;
       }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: auto -80px -80px auto;
-        width: 260px;
-        height: 260px;
-        border-radius: 50%;
-        background: rgba(245, 199, 106, 0.18);
-        filter: blur(14px);
-      }
-
       .hero-inner {
-        display: grid;
-        grid-template-columns: 1.35fr 0.95fr;
-        gap: 32px;
-        align-items: center;
+        display: grid; grid-template-columns: 1.3fr 0.9fr; gap: 30px; align-items: center;
       }
-
       .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.18);
-        font-size: 0.85rem;
-        margin-bottom: 18px;
+        display: inline-block; padding: 8px 14px; border-radius: 999px;
+        background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.15);
+        margin-bottom: 16px; font-size: 0.82rem; font-weight: 700;
       }
-
       .hero h1 {
-        margin: 0 0 18px;
-        font-size: clamp(2.1rem, 4vw, 4rem);
-        line-height: 1.25;
+        margin: 0 0 18px; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 1.25;
       }
-
       .hero p {
-        max-width: 640px;
-        margin: 0 0 28px;
-        color: rgba(255,255,255,0.88);
-        font-size: 1.04rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-bottom: 26px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: none;
-        border-radius: 14px;
-        padding: 14px 22px;
-        font-weight: 800;
-        cursor: pointer;
-        transition: 0.2s ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, var(--secondary), #f0b448);
-        color: var(--primary-deep);
-        box-shadow: 0 18px 24px rgba(245, 199, 106, 0.28);
-      }
-
-      .btn-secondary {
-        background: rgba(255,255,255,0.08);
-        color: #fff;
-        border: 1px solid rgba(255,255,255,0.15);
-      }
-
-      .hero-metrics {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(110px, 1fr));
-        gap: 16px;
-      }
-
-      .metric {
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 16px;
-        padding: 16px 12px;
-        text-align: center;
-      }
-
-      .metric strong {
-        display: block;
-        font-size: 1.55rem;
-        margin-bottom: 6px;
-      }
-
-      .metric span {
-        font-size: 0.82rem;
-        color: rgba(255,255,255,0.72);
-      }
-
-      .hero-card {
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.14);
-        border-radius: 26px;
-        padding: 26px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 18px 40px rgba(0,0,0,0.14);
-      }
-
-      .mini-title {
-        margin: 0 0 18px;
+        margin: 0 0 26px; color: rgba(255,255,255,0.88);
         font-size: 1.05rem;
-        color: rgba(255,255,255,0.9);
       }
-
+      .hero-actions {
+        display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 24px;
+      }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 14px 22px; border-radius: 14px; font-weight: 800; transition: .2s ease;
+      }
+      .btn:hover { transform: translateY(-2px); }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--secondary), #f0b448); color: var(--primary-deep);
+        box-shadow: 0 18px 24px rgba(245, 199, 106, 0.25);
+      }
+      .btn-secondary {
+        background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.15);
+      }
+      .hero-metrics {
+        display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 16px;
+      }
+      .metric {
+        background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px; padding: 18px 12px; text-align: center;
+      }
+      .metric strong { display: block; font-size: 1.5rem; margin-bottom: 6px; }
+      .metric span { color: rgba(255,255,255,0.78); font-size: 0.8rem; }
+      .hero-card {
+        background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 24px; padding: 24px; box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+      }
+      .mini-title { margin: 0 0 16px; color: rgba(255,255,255,0.92); }
       .mini-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 14px;
+        list-style: none; margin: 0; padding: 0; display: grid; gap: 12px;
       }
-
       .mini-list li {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        background: rgba(255,255,255,0.05);
-        padding: 12px 14px;
-        border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;
       }
-
-      .mini-list span {
-        color: #ecf5ff;
-        font-weight: 600;
-      }
-
+      .mini-list span { color: #edf7ff; font-weight: 700; }
       .mini-tag {
-        background: rgba(245,199,106,0.2);
-        color: #ffe79a;
-        border: 1px solid rgba(245,199,106,0.28);
-        padding: 6px 10px;
-        border-radius: 999px;
-        font-size: 0.74rem;
-        font-weight: 700;
+        background: rgba(245,199,106,0.2); color: #ffe79a; border: 1px solid rgba(245,199,106,0.28);
+        border-radius: 999px; padding: 6px 10px; font-size: 0.76rem; font-weight: 800;
       }
 
-      section {
-        padding: 76px 0;
-      }
-
+      section { padding: 72px 0; }
       .section-head {
-        text-align: center;
-        margin-bottom: 34px;
+        text-align: center; margin-bottom: 30px;
       }
-
       .section-head h2 {
-        margin: 0 0 10px;
-        font-size: clamp(2rem, 3vw, 2.8rem);
-        color: var(--primary);
+        margin: 0 0 8px; color: var(--primary); font-size: clamp(2rem, 3vw, 2.7rem);
       }
-
-      .section-head p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 1rem;
-      }
-
-      .filter-bar {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-bottom: 24px;
-      }
-
-      .filter-btn {
-        border: 1px solid var(--line);
-        background: #fff;
-        color: var(--primary);
-        padding: 12px 18px;
-        border-radius: 999px;
-        font-weight: 800;
-        cursor: pointer;
-        transition: 0.2s ease;
-      }
-
-      .filter-btn.active,
-      .filter-btn:hover {
-        background: var(--primary);
-        color: #fff;
-        border-color: var(--primary);
-        box-shadow: 0 12px 20px rgba(13, 59, 102, 0.12);
-      }
+      .section-head p { margin: 0; color: var(--muted); }
 
       .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 28px;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;
       }
-
       .subject-card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        background: var(--card); border: 1px solid var(--line); border-radius: 22px;
+        box-shadow: var(--shadow); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease;
       }
-
-      .subject-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 18px 38px rgba(12, 37, 62, 0.12);
-      }
-
+      .subject-card:hover { transform: translateY(-4px); box-shadow: 0 20px 42px rgba(13,59,102,0.12); }
       .card-top {
-        background: linear-gradient(135deg, #edf5ff 0%, #f8f5ea 100%);
-        padding: 22px 18px 18px;
-        border-bottom: 1px solid var(--line);
+        background: linear-gradient(135deg, #edf5ff 0%, #f9f4ea 100%);
+        padding: 22px 18px 18px; border-bottom: 1px solid var(--line);
       }
-
-      .card-top h3 {
-        margin: 0;
-        font-size: 1.6rem;
-        color: var(--primary);
-      }
-
-      .card-body {
-        padding: 16px 18px 18px;
-      }
-
-      .book-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
+      .card-top h3 { margin: 0; color: var(--primary); font-size: 1.6rem; }
+      .card-body { padding: 18px; }
+      .book-list { list-style: none; margin: 0; padding: 0; }
       .book-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 12px 0;
-        border-bottom: 1px dashed var(--line);
+        display: flex; justify-content: space-between; align-items: center; gap: 12px;
+        padding: 12px 0; border-bottom: 1px dashed var(--line);
       }
-
-      .book-item:last-child {
-        border-bottom: none;
-      }
-
-      .book-name {
-        font-weight: 700;
-        color: var(--text);
-        display: inline-block;
-      }
-
+      .book-item:last-child { border-bottom: none; }
+      .book-name { font-weight: 700; color: var(--text); }
       .book-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 84px;
-        padding: 8px 12px;
-        border-radius: 10px;
-        background: var(--primary);
-        color: #fff;
-        font-size: 0.78rem;
-        font-weight: 800;
-        transition: 0.2s ease;
+        min-width: 84px; padding: 8px 14px; border-radius: 10px; background: var(--primary);
+        color: #fff; font-weight: 800; text-align: center; font-size: 0.78rem;
       }
+      .book-btn:hover { background: var(--primary-deep); }
 
-      .book-btn:hover {
-        background: var(--primary-deep);
-      }
-
-      .features {
-        background: linear-gradient(180deg, #edf4ff, #f9fbff);
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-      }
-
+      .features { background: linear-gradient(180deg, #edf4ff, #f9fbff); }
       .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 22px;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px;
       }
-
       .feature-item {
-        background: #fff;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 22px 18px;
-        text-align: center;
+        background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px 18px; text-align: center;
         box-shadow: 0 12px 24px rgba(13, 59, 102, 0.05);
       }
-
       .icon-box {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 14px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, #dfeeff, #fceec5);
-        display: grid;
-        place-items: center;
-        font-size: 1.7rem;
+        width: 64px; height: 64px; margin: 0 auto 14px; border-radius: 18px; display: grid; place-items: center;
+        font-size: 1.7rem; background: linear-gradient(135deg, #dfeeff, #fceec5);
       }
-
-      .feature-item h4 {
-        margin: 0 0 8px;
-        color: var(--primary);
-      }
-
-      .feature-item p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.94rem;
-      }
-
-      .cta {
-        padding: 34px 0 0;
-      }
+      .feature-item h4 { margin: 0 0 8px; color: var(--primary); }
+      .feature-item p { margin: 0; color: var(--muted); font-size: 0.94rem; }
 
       .cta-box {
         background: linear-gradient(135deg, var(--primary-deep), var(--primary));
-        color: #fff;
-        border-radius: 26px;
-        padding: 30px 26px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        flex-wrap: wrap;
-        box-shadow: 0 18px 40px rgba(13, 59, 102, 0.18);
+        color: #fff; border-radius: 26px; padding: 28px 24px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
       }
-
-      .cta-box h3 {
-        margin: 0 0 8px;
-        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-      }
-
-      .cta-box p {
-        margin: 0;
-        color: rgba(255,255,255,0.82);
-      }
+      .cta-box h3 { margin: 0 0 8px; font-size: clamp(1.6rem, 2vw, 2.2rem); }
+      .cta-box p { margin: 0; color: rgba(255,255,255,0.82); }
 
       footer {
-        background: #071c2f;
-        color: #fff;
-        padding: 20px 0 28px;
+        background: #071c2f; color: #fff; padding: 22px 0 26px;
       }
-
       .footer-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 14px;
-        flex-wrap: wrap;
+        display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;
       }
-
-      .footer-row p {
-        margin: 0;
-        color: rgba(255,255,255,0.86);
-      }
-
-      .footer-link {
-        color: var(--secondary);
-        font-weight: 700;
-      }
+      .footer-row p { margin: 0; color: rgba(255,255,255,0.82); }
+      .footer-link { color: var(--secondary); font-weight: 700; }
 
       @media (max-width: 900px) {
-        .hero-inner {
-          grid-template-columns: 1fr;
-        }
-
-        .hero {
-          padding-top: 58px;
-        }
+        .hero-inner { grid-template-columns: 1fr; }
       }
-
       @media (max-width: 620px) {
-        .topbar-inner,
-        .footer-row,
-        .cta-box {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .nav {
-          gap: 8px;
-        }
-
-        .hero-metrics {
-          grid-template-columns: 1fr;
-        }
-
-        .book-item {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .book-btn {
-          width: 100%;
-        }
+        .topbar-inner, .footer-row, .cta-box { flex-direction: column; align-items: flex-start; }
+        .nav { gap: 8px; }
+        .hero-metrics { grid-template-columns: 1fr; }
+        .book-item { flex-direction: column; align-items: flex-start; }
+        .book-btn { width: 100%; }
       }
     </style>
   </head>
@@ -536,13 +215,12 @@
           <div class="brand-mark">ز</div>
           <span>مكتبة زليجي الرقمية</span>
         </div>
-
         <nav class="nav" aria-label="التنقل">
-          <a href="#home">الرئيسية</a>
-          <a href="#catalog">المكتبة</a>
-          <a href="#science">العلمي</a>
-          <a href="#literary">الأدبي</a>
-          <a href="#commercial">التجاري</a>
+          <a href="index.html">الرئيسية</a>
+          <a href="index.html#catalog">المكتبة</a>
+          <a href="science.html">العلمي</a>
+          <a href="literary.html">الأدبي</a>
+          <a href="commercial.html">التجاري</a>
         </nav>
       </div>
     </header>
@@ -557,28 +235,16 @@
             حسب التخصص، مع إمكانية فتح الكتب مباشرة داخل المتصفح للقراءة السريعة
             والتصفح المريح.
           </p>
-
           <div class="hero-actions">
             <a href="#catalog" class="btn btn-primary">استعرض المكتبة</a>
             <a href="#features" class="btn btn-secondary">مميزات الموقع</a>
           </div>
-
           <div class="hero-metrics">
-            <div class="metric">
-              <strong>3</strong>
-              <span>أقسام رئيسية</span>
-            </div>
-            <div class="metric">
-              <strong>20+</strong>
-              <span>مادة دراسية</span>
-            </div>
-            <div class="metric">
-              <strong>24/7</strong>
-              <span>تصفح مستمر</span>
-            </div>
+            <div class="metric"><strong>3</strong><span>أقسام رئيسية</span></div>
+            <div class="metric"><strong>20+</strong><span>مادة دراسية</span></div>
+            <div class="metric"><strong>24/7</strong><span>تصفح مستمر</span></div>
           </div>
         </div>
-
         <div class="hero-card">
           <h3 class="mini-title">أحدث الأقسام</h3>
           <ul class="mini-list">
@@ -598,112 +264,42 @@
           <p>اختر تخصصك ثم اختر المادة التي تريدها</p>
         </div>
 
-        <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">الكل</button>
-          <button class="filter-btn" data-filter="science">العلمي</button>
-          <button class="filter-btn" data-filter="literary">الأدبي</button>
-          <button class="filter-btn" data-filter="commercial">التجاري</button>
-        </div>
-
         <div class="cards-grid">
-          <article class="subject-card" data-category="science" id="science">
-            <div class="card-top">
-              <h3>الفرع العلمي</h3>
-            </div>
+          <article class="subject-card">
+            <div class="card-top"><h3>الفرع العلمي</h3></div>
             <div class="card-body">
               <ul class="book-list">
-                <li class="book-item">
-                  <span class="book-name">الرياضيات</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الفيزياء</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الكيمياء</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الأحياء</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">اللغة العربية</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">التربية الإسلامية</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
+                <li class="book-item"><span class="book-name">الرياضيات</span><a href="science.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الفيزياء</span><a href="science.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الكيمياء</span><a href="science.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الأحياء</span><a href="science.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">اللغة العربية</span><a href="science.html" class="book-btn">فتح</a></li>
               </ul>
             </div>
           </article>
 
-          <article class="subject-card" data-category="literary" id="literary">
-            <div class="card-top">
-              <h3>الفرع الأدبي</h3>
-            </div>
+          <article class="subject-card">
+            <div class="card-top"><h3>الفرع الأدبي</h3></div>
             <div class="card-body">
               <ul class="book-list">
-                <li class="book-item">
-                  <span class="book-name">اللغة العربية</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">التاريخ</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الجغرافيا</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الفلسفة</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الاقتصاد</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الاجتماعيات</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
+                <li class="book-item"><span class="book-name">اللغة العربية</span><a href="literary.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">التاريخ</span><a href="literary.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الجغرافيا</span><a href="literary.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الفلسفة</span><a href="literary.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الاقتصاد</span><a href="literary.html" class="book-btn">فتح</a></li>
               </ul>
             </div>
           </article>
 
-          <article class="subject-card" data-category="commercial" id="commercial">
-            <div class="card-top">
-              <h3>الفرع التجاري</h3>
-            </div>
+          <article class="subject-card">
+            <div class="card-top"><h3>الفرع التجاري</h3></div>
             <div class="card-body">
               <ul class="book-list">
-                <li class="book-item">
-                  <span class="book-name">المحاسبة</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الاقتصاد</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الإدارة</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">اللغة العربية</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">التربية الإسلامية</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
-                <li class="book-item">
-                  <span class="book-name">الحاسب</span>
-                  <a href="#" class="book-btn">فتح</a>
-                </li>
+                <li class="book-item"><span class="book-name">المحاسبة</span><a href="commercial.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الاقتصاد</span><a href="commercial.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الإدارة</span><a href="commercial.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">اللغة العربية</span><a href="commercial.html" class="book-btn">فتح</a></li>
+                <li class="book-item"><span class="book-name">الحاسب</span><a href="commercial.html" class="book-btn">فتح</a></li>
               </ul>
             </div>
           </article>
@@ -717,26 +313,22 @@
           <h2>مميزات الموقع</h2>
           <p>بيئة تعليمية سهلة وفعالة للتصفح والقراءة</p>
         </div>
-
         <div class="feature-grid">
           <div class="feature-item">
             <div class="icon-box">📚</div>
             <h4>كتب متنوعة</h4>
             <p>محتوى لكل فرع دراسي ومادة تعليمية</p>
           </div>
-
           <div class="feature-item">
             <div class="icon-box">🔎</div>
             <h4>تصفح سريع</h4>
             <p>تصميم سهل وواجهة واضحة للبحث والقراءة</p>
           </div>
-
           <div class="feature-item">
             <div class="icon-box">📱</div>
             <h4>مناسب للجوال</h4>
             <p>يعمل بشكل ممتاز على الهاتف والكمبيوتر</p>
           </div>
-
           <div class="feature-item">
             <div class="icon-box">⚡</div>
             <h4>سريع الأداء</h4>
@@ -746,14 +338,14 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section>
       <div class="container">
         <div class="cta-box">
           <div>
             <h3>ابدأ باستخدام المكتبة الآن</h3>
             <p>اختر مادة دراسية ثم افتح الكتاب مباشرة داخل المتصفح</p>
           </div>
-          <a href="#catalog" class="btn btn-primary">تصفح الآن</a>
+          <a href="science.html" class="btn btn-primary">تصفح الآن</a>
         </div>
       </div>
     </section>
@@ -766,29 +358,10 @@
     </footer>
 
     <script>
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const cards = document.querySelectorAll(".subject-card");
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const filter = button.dataset.filter;
-
-          filterButtons.forEach((btn) => btn.classList.remove("active"));
-          button.classList.add("active");
-
-          cards.forEach((card) => {
-            const category = card.dataset.category;
-
-            if (filter === "all" || category === filter) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
+
+
+
