@@ -1,120 +1,794 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="مكتبة زالنجي الإلكترونية العامة تقدم كتبًا عربية، مقالات، ومحتوى تعليمي في مجالات الثقافة والمعرفة." />
-  <meta name="keywords" content="مكتبة زالنجي, مكتبة رقمية, كتب عربية, محتوى تعليمي, مقالات عربية, مكتبة إلكترونية" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://hashmmohmed466-wq.github.io/zalingei-digital-library/" />
-  <title>مكتبة زالنجي الإلكترونية العامة</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="container topbar">
-      <div class="brand">مكتبة زالنجي الإلكترونية</div>
-      <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">من نحن</a>
-        <a href="books.html">الكتب</a>
-        <a href="contact.html">تواصل معنا</a>
-      </nav>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="مكتبة زليجي الرقمية - كتب الصف الثالث ثانوي حسب التخصص"
+    />
+    <title>مكتبة زليجي الرقمية</title>
+    <style>
+      :root {
+        --primary: #0d3b66;
+        --primary-deep: #072b47;
+        --primary-soft: #eaf3ff;
+        --secondary: #f5c76a;
+        --text: #1c2430;
+        --muted: #637184;
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --line: #e7edf5;
+        --success: #1b9c7c;
+        --shadow: 0 14px 35px rgba(13, 59, 102, 0.12);
+        --radius: 20px;
+      }
 
-    <div class="container hero">
-      <div class="hero-inner">
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Tahoma", "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 30px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        background: linear-gradient(135deg, var(--primary-deep), var(--primary));
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 8px 24px rgba(9, 31, 58, 0.18);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 74px;
+        gap: 18px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #fbe9b4, var(--secondary));
+        display: grid;
+        place-items: center;
+        color: var(--primary);
+        font-weight: 900;
+        font-size: 1.1rem;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        color: rgba(255,255,255,0.9);
+        font-weight: 600;
+        padding: 8px 10px;
+        border-radius: 10px;
+        transition: 0.2s ease;
+      }
+
+      .nav a:hover {
+        background: rgba(255,255,255,0.08);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 32%),
+          linear-gradient(135deg, #0e446b 0%, #0c365b 45%, #081d32 100%);
+        color: #fff;
+        padding: 80px 0 60px;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -80px -80px auto;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: rgba(245, 199, 106, 0.18);
+        filter: blur(14px);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.35fr 0.95fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.18);
+        font-size: 0.85rem;
+        margin-bottom: 18px;
+      }
+
+      .hero h1 {
+        margin: 0 0 18px;
+        font-size: clamp(2.1rem, 4vw, 4rem);
+        line-height: 1.25;
+      }
+
+      .hero p {
+        max-width: 640px;
+        margin: 0 0 28px;
+        color: rgba(255,255,255,0.88);
+        font-size: 1.04rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 26px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+        border-radius: 14px;
+        padding: 14px 22px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--secondary), #f0b448);
+        color: var(--primary-deep);
+        box-shadow: 0 18px 24px rgba(245, 199, 106, 0.28);
+      }
+
+      .btn-secondary {
+        background: rgba(255,255,255,0.08);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.15);
+      }
+
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(110px, 1fr));
+        gap: 16px;
+      }
+
+      .metric {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px;
+        padding: 16px 12px;
+        text-align: center;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.55rem;
+        margin-bottom: 6px;
+      }
+
+      .metric span {
+        font-size: 0.82rem;
+        color: rgba(255,255,255,0.72);
+      }
+
+      .hero-card {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 26px;
+        padding: 26px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+      }
+
+      .mini-title {
+        margin: 0 0 18px;
+        font-size: 1.05rem;
+        color: rgba(255,255,255,0.9);
+      }
+
+      .mini-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .mini-list li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        background: rgba(255,255,255,0.05);
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .mini-list span {
+        color: #ecf5ff;
+        font-weight: 600;
+      }
+
+      .mini-tag {
+        background: rgba(245,199,106,0.2);
+        color: #ffe79a;
+        border: 1px solid rgba(245,199,106,0.28);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 0.74rem;
+        font-weight: 700;
+      }
+
+      section {
+        padding: 76px 0;
+      }
+
+      .section-head {
+        text-align: center;
+        margin-bottom: 34px;
+      }
+
+      .section-head h2 {
+        margin: 0 0 10px;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        color: var(--primary);
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .filter-bar {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .filter-btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--primary);
+        padding: 12px 18px;
+        border-radius: 999px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+        box-shadow: 0 12px 20px rgba(13, 59, 102, 0.12);
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+      }
+
+      .subject-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .subject-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 38px rgba(12, 37, 62, 0.12);
+      }
+
+      .card-top {
+        background: linear-gradient(135deg, #edf5ff 0%, #f8f5ea 100%);
+        padding: 22px 18px 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .card-top h3 {
+        margin: 0;
+        font-size: 1.6rem;
+        color: var(--primary);
+      }
+
+      .card-body {
+        padding: 16px 18px 18px;
+      }
+
+      .book-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .book-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--line);
+      }
+
+      .book-item:last-child {
+        border-bottom: none;
+      }
+
+      .book-name {
+        font-weight: 700;
+        color: var(--text);
+        display: inline-block;
+      }
+
+      .book-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 84px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        background: var(--primary);
+        color: #fff;
+        font-size: 0.78rem;
+        font-weight: 800;
+        transition: 0.2s ease;
+      }
+
+      .book-btn:hover {
+        background: var(--primary-deep);
+      }
+
+      .features {
+        background: linear-gradient(180deg, #edf4ff, #f9fbff);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+      }
+
+      .feature-item {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 22px 18px;
+        text-align: center;
+        box-shadow: 0 12px 24px rgba(13, 59, 102, 0.05);
+      }
+
+      .icon-box {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 14px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #dfeeff, #fceec5);
+        display: grid;
+        place-items: center;
+        font-size: 1.7rem;
+      }
+
+      .feature-item h4 {
+        margin: 0 0 8px;
+        color: var(--primary);
+      }
+
+      .feature-item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .cta {
+        padding: 34px 0 0;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, var(--primary-deep), var(--primary));
+        color: #fff;
+        border-radius: 26px;
+        padding: 30px 26px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+        box-shadow: 0 18px 40px rgba(13, 59, 102, 0.18);
+      }
+
+      .cta-box h3 {
+        margin: 0 0 8px;
+        font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      }
+
+      .cta-box p {
+        margin: 0;
+        color: rgba(255,255,255,0.82);
+      }
+
+      footer {
+        background: #071c2f;
+        color: #fff;
+        padding: 20px 0 28px;
+      }
+
+      .footer-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .footer-row p {
+        margin: 0;
+        color: rgba(255,255,255,0.86);
+      }
+
+      .footer-link {
+        color: var(--secondary);
+        font-weight: 700;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 58px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .topbar-inner,
+        .footer-row,
+        .cta-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          gap: 8px;
+        }
+
+        .hero-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .book-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .book-btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">ز</div>
+          <span>مكتبة زليجي الرقمية</span>
+        </div>
+
+        <nav class="nav" aria-label="التنقل">
+          <a href="#home">الرئيسية</a>
+          <a href="#catalog">المكتبة</a>
+          <a href="#science">العلمي</a>
+          <a href="#literary">الأدبي</a>
+          <a href="#commercial">التجاري</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container hero-inner">
         <div>
-          <h1>بوابة للمعرفة والثقافة في متناول الجميع</h1>
+          <div class="eyebrow">📚 كتب الصف الثالث ثانوي</div>
+          <h1>منهجك الدراسي في مكان واحد، بسهولة ووضوح</h1>
           <p>
-            نهدف إلى تقديم محتوى عربي موثوق، كتب متنوعة، ومعلومات تعليمية تساعد القارئ
-            على اكتشاف المعرفة بسهولة ووضوح.
+            مكتبة زليجي الرقمية توفر لك جميع المواد الدراسية للصف الثالث ثانوي
+            حسب التخصص، مع إمكانية فتح الكتب مباشرة داخل المتصفح للقراءة السريعة
+            والتصفح المريح.
           </p>
-          <div class="buttons">
-            <a class="btn btn-primary" href="books.html">تصفح الكتب</a>
-            <a class="btn btn-secondary" href="about.html">اعرف المزيد</a>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">استعرض المكتبة</a>
+            <a href="#features" class="btn btn-secondary">مميزات الموقع</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>3</strong>
+              <span>أقسام رئيسية</span>
+            </div>
+            <div class="metric">
+              <strong>20+</strong>
+              <span>مادة دراسية</span>
+            </div>
+            <div class="metric">
+              <strong>24/7</strong>
+              <span>تصفح مستمر</span>
+            </div>
           </div>
         </div>
 
         <div class="hero-card">
-          <h2 style="font-size:1.3rem; color:white; margin-bottom:16px;">ماذا نقدم؟</h2>
-          <div class="stat-grid">
-            <div class="stat">
-              <strong>50+</strong>
-              <span>كتاب</span>
+          <h3 class="mini-title">أحدث الأقسام</h3>
+          <ul class="mini-list">
+            <li><span>الفرع العلمي</span><span class="mini-tag">8 مواد</span></li>
+            <li><span>الفرع الأدبي</span><span class="mini-tag">8 مواد</span></li>
+            <li><span>الفرع التجاري</span><span class="mini-tag">8 مواد</span></li>
+            <li><span>الكتاب الرقمي</span><span class="mini-tag">PDF</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <h2>المكتبة الدراسية</h2>
+          <p>اختر تخصصك ثم اختر المادة التي تريدها</p>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="science">العلمي</button>
+          <button class="filter-btn" data-filter="literary">الأدبي</button>
+          <button class="filter-btn" data-filter="commercial">التجاري</button>
+        </div>
+
+        <div class="cards-grid">
+          <article class="subject-card" data-category="science" id="science">
+            <div class="card-top">
+              <h3>الفرع العلمي</h3>
             </div>
-            <div class="stat">
-              <strong>12</strong>
-              <span>قسم</span>
+            <div class="card-body">
+              <ul class="book-list">
+                <li class="book-item">
+                  <span class="book-name">الرياضيات</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الفيزياء</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الكيمياء</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الأحياء</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">اللغة العربية</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">التربية الإسلامية</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+              </ul>
             </div>
-            <div class="stat">
-              <strong>24/7</strong>
-              <span>وصول</span>
+          </article>
+
+          <article class="subject-card" data-category="literary" id="literary">
+            <div class="card-top">
+              <h3>الفرع الأدبي</h3>
             </div>
-            <div class="stat">
-              <strong>100%</strong>
-              <span>تجربة عربية</span>
+            <div class="card-body">
+              <ul class="book-list">
+                <li class="book-item">
+                  <span class="book-name">اللغة العربية</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">التاريخ</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الجغرافيا</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الفلسفة</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الاقتصاد</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الاجتماعيات</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+              </ul>
             </div>
+          </article>
+
+          <article class="subject-card" data-category="commercial" id="commercial">
+            <div class="card-top">
+              <h3>الفرع التجاري</h3>
+            </div>
+            <div class="card-body">
+              <ul class="book-list">
+                <li class="book-item">
+                  <span class="book-name">المحاسبة</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الاقتصاد</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الإدارة</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">اللغة العربية</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">التربية الإسلامية</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+                <li class="book-item">
+                  <span class="book-name">الحاسب</span>
+                  <a href="#" class="book-btn">فتح</a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>مميزات الموقع</h2>
+          <p>بيئة تعليمية سهلة وفعالة للتصفح والقراءة</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="icon-box">📚</div>
+            <h4>كتب متنوعة</h4>
+            <p>محتوى لكل فرع دراسي ومادة تعليمية</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="icon-box">🔎</div>
+            <h4>تصفح سريع</h4>
+            <p>تصميم سهل وواجهة واضحة للبحث والقراءة</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="icon-box">📱</div>
+            <h4>مناسب للجوال</h4>
+            <p>يعمل بشكل ممتاز على الهاتف والكمبيوتر</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="icon-box">⚡</div>
+            <h4>سريع الأداء</h4>
+            <p>تحميل خفيف وسرعة عالية في التصفح</p>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <main class="container">
-    <section>
-      <h2 class="section-title">أهم المميزات</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>محتوى عربي متنوع</h3>
-          <p>كتب ومقالات ومراجع تعليمية تغطي مجالات متعددة وتناسب مختلف المستويات.</p>
-        </article>
-        <article class="card">
-          <h3>تجربة سهلة</h3>
-          <p>واجهة بسيطة، قابلة للقراءة، ومصممة لتقديم تجربة مستخدم سهلة ومريحة.</p>
-        </article>
-        <article class="card">
-          <h3>تحديث مستمر</h3>
-          <p>نستمر في إضافة محتوى جديد وتحسين التجربة لتلبية احتياجات الزوار.</p>
-        </article>
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h3>ابدأ باستخدام المكتبة الآن</h3>
+            <p>اختر مادة دراسية ثم افتح الكتاب مباشرة داخل المتصفح</p>
+          </div>
+          <a href="#catalog" class="btn btn-primary">تصفح الآن</a>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2 class="section-title">أحدث الكتب</h2>
-      <div class="books-list">
-        <article class="book-item">
-          <div class="book-cover">كتاب</div>
-          <div class="book-body">
-            <h3>أساسيات القراءة النقدية</h3>
-            <div class="book-meta">النوع: أدب • المؤلف: فريق المكتبة</div>
-            <p>دليل عملي لفهم النصوص وتحليلها بطريقة دقيقة وبسيطة.</p>
-          </div>
-        </article>
-
-        <article class="book-item">
-          <div class="book-cover">كتاب</div>
-          <div class="book-body">
-            <h3>مقدمة في المنهجية</h3>
-            <div class="book-meta">النوع: تعليم • المؤلف: فريق المكتبة</div>
-            <p>مصدر يساعد على فهم أسس البحث العلمي والتخطيط للمحتوى الأكاديمي.</p>
-          </div>
-        </article>
-
-        <article class="book-item">
-          <div class="book-cover">كتاب</div>
-          <div class="book-body">
-            <h3>الثقافة الرقمية</h3>
-            <div class="book-meta">النوع: تكنولوجيا • المؤلف: فريق المكتبة</div>
-            <p>تعريف شامل بالفهم الرقمي والتعامل الآمن مع المعلومات والبيانات.</p>
-          </div>
-        </article>
+    <footer>
+      <div class="container footer-row">
+        <p>© <span id="year"></span> مكتبة زليجي الرقمية</p>
+        <p>جميع الحقوق محفوظة - <a href="#home" class="footer-link">العودة للأعلى</a></p>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="footer">
-    <div class="container">© 2026 مكتبة زالنجي الإلكترونية العامة. جميع الحقوق محفوظة.</div>
-  </footer>
-</body>
+    <script>
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".subject-card");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.filter;
+
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          cards.forEach((card) => {
+            const category = card.dataset.category;
+
+            if (filter === "all" || category === filter) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
